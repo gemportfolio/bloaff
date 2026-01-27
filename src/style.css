@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-dark: #1A1410;
+    --bg-card: #141A2A;
+    --text: rgba(255,255,255,.92);
+    --muted: rgba(255,255,255,.68);
+    --gold: #D4AF37;
+    --soft-gold: #F2D27C;
+    --border: rgba(255,255,255,.10);
+    
+    --fontGoogleSans: "Google Sans", sans-serif;
+    --fontOutfit: "Outfit", sans-serif;
+}
+
+body {
+	overflow-x: hidden !important;
+    margin: 0;
+    padding: 0;
+    color: var(--text);
+    background: var(--bg-dark);
+    font-family: var(--fontOutfit);
+}
+
+a { 
+    text-decoration: none; 
+}
+
+.col-gold {
+    color: var(--gold);
+}
+.bg-gold {
+    background-color: var(--gold);
+}
+.border-gold {
+    border: solid 1px var(--gold);
+}
+
+.gold-glow:hover {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+    border-color: #D4AF37;
+}
+
+
+/* ===== HEADER ===== */
+header {
+  padding: 28px 0;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(900px 520px at 20% 10%, rgba(212,175,55,.32), transparent 60%),
+    radial-gradient(900px 520px at 85% 22%, rgba(242,210,124,.24), transparent 55%),
+    radial-gradient(900px 520px at 50% 95%, rgba(242,210,124,.20), transparent 55%),
+    linear-gradient(180deg, var(--bg-card), var(--bg-dark));
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    /* GRID LINES */
+    background:
+        repeating-linear-gradient(
+        to right,
+        rgba(255,255,255,.44) 0px,
+        rgba(255,255,255,.44) 1px,
+        transparent 1px,
+        transparent 70px
+        ),
+        repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,.44) 0px,
+        rgba(255,255,255,.44) 1px,
+        transparent 1px,
+        transparent 70px
+        );
+
+    /* Position it near bottom visually */
+    opacity: .20;
+
+    /* Fade from bottom up */
+    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%);
+    mask-image: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%);
+}
+
+
+/* ===== NAVBAR ===== */
+.nav-cta{
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(212,175,55,.35);
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 14px;
+  transition: .2s ease;
+}
+.nav-cta:hover{
+  background: rgba(212,175,55,.12);
+  transform: translateY(-1px);
+}
+
+/* ===== HERO CONTENT ===== */
+.hero-content{
+  margin-top: 70px;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  gap: 22px;
+}
+
+.hero-image{
+  display: grid;
+  place-items: center;
+}
+
+.hero-title{
+  max-width: 820px;
+}
+
+.hero-title span{
+  color: var(--gold);
+}
+
+
+/* TESTIMONIAL SLIDER */
+.testimonial-dots-container {
+	position: relative;
+	z-index: 40;
+	margin-top: -24px;
+}
+
+.slick-dots {
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+}
+
+.slick-dots li {
+	display: inline-block;
+}
+
+.slick-dots li button {
+	text-indent: -9999px;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background-color: var(--gold);
+}
+  
+.slick-dots li.slick-active button {
+	background-color: #d4af3764;
+}
+
+
+
+/* ===== BUTTONS ===== */
+.hero-buttons{
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* BUTTON STYLES */
+.btn{
+  padding: 12px 20px;
+}
+
+.btn-primary{
+  color: #101010;
+  background: linear-gradient(180deg, var(--gold), var(--soft-gold));
+  box-shadow: 0 14px 40px rgba(212,175,55,.18);
+}
+.btn-primary:hover{
+  transform: translateY(-2px);
+}
+
+.btn-secondary{
+  border: 1px solid rgba(255,255,255,.15);
+  color: var(--text);
+  background: rgba(255,255,255,.04);
+}
+
+.btn-secondary:hover{
+  border-color: rgba(212,175,55,.35);
+  color: var(--gold);
+}
+
+
